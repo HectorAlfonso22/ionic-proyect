@@ -1,0 +1,37 @@
+<style>
+  
+
+</style>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Noticias</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+    <h1>La IA</h1>
+    <ion-content class="contenido" (click)="goToDetails(cardData)">
+      @for (item of cardData; track item){
+        <ion-card-header>
+          <ion-card-title>{{ item.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <img src="{{ item.imageUrl }}" alt="">
+          <ion-card-title>{{ item.description }}</ion-card-title>
+          <input type="button" value="mas detalles" href>
+        </ion-card-content>
+      }
+    </ion-content>
+
+  
+
+    
+</ion-content>

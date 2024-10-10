@@ -1,0 +1,81 @@
+/* Para hacer que la imagen sea responsive y no recortada */
+ion-card img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: auto;
+    /* Ajusta la altura de forma proporcional */
+    object-fit: contain;
+    /* Mantén la imagen completa sin recortar */
+    max-height: 500px;
+    /* Ajusta esta altura según lo que necesites */
+    display: block;
+    margin: 0 auto;
+    /* Centrar la imagen */
+}
+
+ion-card-title {
+    margin: 0 auto;
+}
+
+/* Descripción truncada con "..." por defecto */
+.noticia-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Número de líneas antes de truncar */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Permite el truncado en líneas múltiples */
+    max-height: 4.5em; /* Controla la altura para permitir el truncado */
+    line-height: 1.5em; /* Ajusta el espacio entre líneas */
+    position: relative;
+    transition: max-height 0.3s ease, -webkit-line-clamp 0.3s ease;
+}
+
+/* Mostrar el texto completo y eliminar "..." al hacer hover */
+ion-card-content:hover {
+    -webkit-line-clamp: unset; /* Elimina la restricción de líneas */
+    max-height: none; /* Permite que la descripción crezca */
+    overflow: visible; /* Muestra el contenido completo */
+    white-space: normal; /* Permite saltos de línea normales */
+    text-overflow: clip; /* Elimina los "..." */
+}
+
+
+
+
+/* Oculta el botón por defecto */
+ion-button {
+    display: none;
+    margin-top: 10px;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Mostrar el botón al hacer hover sobre el ion-card */
+ion-card:hover ion-button {
+    display: inline-block;
+}
+
+
+
+
+/* Responsive design para pantallas más pequeñas */
+@media (max-width: 768px) {
+    ion-card img {
+        max-height: 150px;
+        /* Ajusta el tamaño en pantallas pequeñas */
+    }
+
+    .descripcion {
+        font-size: 14px;
+        /* Ajusta el tamaño de fuente en pantallas pequeñas */
+    }
+
+    ion-button {
+        font-size: 12px;
+        /* Botón más pequeño en pantallas pequeñas */
+    }
+}

@@ -1,0 +1,158 @@
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    /* Ajusta según la paleta de colores que prefieras */
+}
+
+.custom-text {
+    white-space: pre-line;
+    line-height: 1.6;
+    /* Mejora la legibilidad */
+    font-size: 16px;
+    padding: 0 15px;
+    /* Agrega espacio alrededor del texto */
+    color: #666;
+    /* Color suave para el cuerpo del texto */
+}
+
+ion-content {
+    background-color: #f7f7f7;
+    /* Fondo claro que contrasta con el texto */
+    padding: 10px;
+}
+
+ion-button {
+    width: auto;
+    /* Se ajusta al contenido */
+    max-width: 200px;
+    /* Limita el ancho máximo */
+    padding: 12px 24px;
+    /* Ajusta el relleno interno */
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px auto;
+    /* Centra el botón horizontalmente */
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar sensación de profundidad */
+}
+
+ion-button:hover {
+    background-color: #949494;
+    /* Efecto hover */
+}
+
+ion-button:active {
+    background-color: #6e6e6e;
+    /* Efecto al hacer clic */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+
+ion-button,
+img {
+    transition: all 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.02);
+    /* Efecto de zoom suave al pasar el mouse sobre la imagen */
+}
+
+ion-button:hover {
+    transform: translateY(-2px);
+    /* Levanta ligeramente el botón al pasar el mouse */
+}
+
+:root {
+    --primary-color: #8a8a8a;
+    /* Color principal */
+    --secondary-color: #333;
+    /* Color secundario */
+    --background-color: #f7f7f7;
+    /* Fondo */
+    --text-color: #666;
+    /* Color del texto */
+}
+
+ion-content {
+    background-color: var(--background-color);
+}
+
+.custom-text {
+    color: var(--text-color);
+}
+
+h1 {
+    color: var(--secondary-color);
+}
+
+ion-button {
+    background-color: var(--primary-color);
+}
+
+/* Media query para pantallas pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+    ion-button {
+      max-width: 150px; /* Botón más pequeño */
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    img {
+      max-height: 400px; /* Imagen más pequeña */
+      border-radius: 8px;
+    }
+  
+    .custom-text {
+      font-size: 14px; /* Texto más pequeño */
+      padding: 0 10px;
+    }
+  }
+  
+  /* Media query para pantallas ultra pequeñas (móviles muy pequeños, como 480px o menos) */
+  @media (max-width: 480px) {
+    ion-button {
+      max-width: 120px; /* Botón aún más pequeño */
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  
+    h1 {
+      font-size: 18px; /* Título más pequeño */
+    }
+  
+    img {
+      max-height: 300px; /* Imagen aún más pequeña */
+    }
+  
+    .custom-text {
+      font-size: 12px;
+      padding: 0 8px;
+    }
+  
+    /* Ajustar el botón de scroll para pantallas muy pequeñas */
+    ion-button.scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+  }

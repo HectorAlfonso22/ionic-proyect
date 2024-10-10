@@ -30,15 +30,11 @@ export const routes: Routes = [
       
       {
         path: '',
-        redirectTo: 'tabs',
+        redirectTo: 'tab3',
         pathMatch: 'full',
       },
   
-      {
-        path: '',
-        redirectTo: 'tabs',
-        pathMatch: 'full',
-      },
+
     ],
   },
   {

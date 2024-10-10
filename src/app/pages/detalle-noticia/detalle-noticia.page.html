@@ -4,16 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
-  <ion-card *ngIf="selectedCard">
-    <ion-card-header>
-      <ion-card-title>{{ selectedCard.title }}</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <img [src]="selectedCard.imageUrl" alt="imagen">
-      <p>{{ selectedCard.description }}</p>
-    </ion-card-content>
-  </ion-card>
+<ion-content *ngIf="selectedCard" class="ion-padding">
+  <h1>{{ selectedCard.title }}</h1>
+  <img [src]="selectedCard.imageUrl" alt="imagen">
+  <p class="custom-text">
+    {{ selectedCard.description }}
+  </p>
+  <ion-button color="medium" expand="block" (click)="scrollToTop()"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15l7-7l7 7"/></svg></ion-button>
 </ion-content>
 

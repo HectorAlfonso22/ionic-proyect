@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { NoticiassService } from 'src/app/services/noticiass.service';
 
@@ -10,9 +10,16 @@ import { NoticiassService } from 'src/app/services/noticiass.service';
   templateUrl: './detalle-noticia.page.html',
   styleUrls: ['./detalle-noticia.page.scss'],
   standalone: true,
-  imports: [IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonButton, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,]
 })
 export class DetalleNoticiaPage implements OnInit {
+
+  @ViewChild(IonContent) content!: IonContent;
+  scrollToTop() {
+    // Passing a duration to the method makes it so the scroll slowly
+    // goes to the top instead of instantly
+    this.content.scrollToTop(500);
+  }
 
   cardId: number | null = null;
   selectedCard: any = null;

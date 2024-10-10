@@ -1,0 +1,187 @@
+.welcome-container {
+  display: flex;
+  flex-direction: column;  /* Para apilar el contenido verticalmente */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center;     /* Centra horizontalmente */
+  height: 200px;           /* O al menos 100% del área que quieras ocupar */
+  text-align: center;      /* Alinea el texto en el centro */
+  padding: 20px;
+}
+/* Estilos para la bienvenida */
+.bienvenida {
+  text-align: center;      /* Centra el texto horizontalmente */
+  font-size: 2em;          /* Aumenta el tamaño del texto de bienvenida */
+  font-weight: bold;       /* Opción para hacer el texto más llamativo */
+  margin-bottom: 10px;     /* Añade espacio entre la bienvenida y el siguiente texto */
+  color: #ffffff;             /* Puedes cambiar este color a lo que prefieras */
+}
+
+/* Estilos para el texto de resumen */
+.resumen-texto {
+  text-align: center;      /* Centra el texto horizontalmente */
+  font-size: 1.2em;        /* Aumenta el tamaño del texto de resumen */
+  margin-bottom: 20px;     /* Añade espacio inferior */
+  color: #ffffff;             /* Color del texto */
+}
+
+
+.welcome-container ion-card {
+  width: 90%; /* Ajusta el ancho de la tarjeta según el diseño deseado */
+  max-width: 600px; /* Limita el ancho máximo de la tarjeta */
+}
+
+ion-grid {
+  --ion-grid-padding: 16px;
+}
+
+ion-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ion-col {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Cards en el grid */
+ion-card {
+  width: 100%;
+  max-width: 350px; /* Limita el ancho de las cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra ligera */
+  border-radius: 10px; /* Esquinas redondeadas */
+  transition: transform 0.3s ease; /* Efecto suave al hover */
+}
+
+ion-card:hover {
+  transform: translateY(-10px); /* Efecto de elevar la tarjeta */
+}
+
+/* Contenido de las cards */
+ion-card-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+ion-card-content {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* Imagen dentro del card */
+ion-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Estilo del botón dentro del card */
+ion-button {
+  background-color: #5e5e5e;
+  color: #fff;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+ion-button:hover {
+  background-color: #a0a0a0;
+}
+
+/* Footer */
+ion-footer {
+  display: flex;
+  flex-direction: column;  /* Asegura que el texto y los botones se apilen verticalmente */
+  justify-content: center; /* Centra verticalmente todo el contenido */
+  align-items: center;     /* Centra horizontalmente */
+  width: 100%;
+  text-align: center;
+  font-size: 1em;        /* Aumenta el tamaño del texto del footer */
+  color: #666;
+  padding: 20px 0;
+}
+
+ion-footer ion-toolbar {
+  display: flex;
+  justify-content: center;  /* Centra los botones dentro del ion-toolbar */
+  flex-direction: column;   /* Asegura que los elementos estén apilados verticalmente */
+  align-items: center;      /* Centra el contenido horizontalmente */
+  width: 100%;
+}
+
+ion-footer ion-toolbar div {
+  font-size: 1.5em;        /* Aumenta el tamaño del texto "Footer de información" */
+  margin-top: 30px;  /* Aumenta el espacio superior */
+  margin-bottom: 20px;     /* Añade más espacio entre el texto y los botones */
+  font-weight: bold;       /* Opcional: Hace el texto más llamativo */
+}
+
+ion-footer ion-buttons {
+  display: flex;
+  justify-content: center;  /* Centra los botones dentro del contenedor de botones */
+  align-items: center;
+  gap: 15px;               /* Añade espacio entre los botones */
+  margin-bottom: 10px;
+}
+
+ion-footer ion-button {
+  margin: 0 10px;
+  font-size: 1.2em;        /* Aumenta el tamaño de los botones si lo deseas */
+  flex: 0 1 auto; /* Evita que los botones se expandan */
+  width: auto;    /* Ajusta el tamaño del botón al contenido */
+  padding: 8px;   /* Ajusta el relleno del botón */
+}
+ion-footer ion-icon {
+  color: #ffffff; /* Color blanco para los iconos */
+  font-size: 24px; /* Ajusta el tamaño del icono si es necesario */
+}
+ion-footer ion-button svg {
+  width: 35px;   /* Ajusta el tamaño del ícono SVG */
+  height: 35px;
+  fill: #ffffff; /* Color del ícono */
+
+}
+
+
+
+/* Responsividad del grid */
+@media (max-width: 768px) {
+  
+  .bienvenida {
+    font-size: 1.5em; /* Reduce el tamaño del texto de bienvenida en pantallas móviles */
+  }
+  .resumen-texto {
+    font-size: 1em; /* Reduce el tamaño del texto de resumen en pantallas móviles */
+  }
+  ion-col {
+    width: 100%; /* Ocupa todo el ancho en pantallas más pequeñas */
+  }
+
+  ion-card-title {
+    font-size: 1.2em;
+  }
+
+  ion-card-content {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 769px) {
+  ion-col {
+    flex: 1 0 48%; /* Dos columnas en pantallas medianas */
+  }
+}
+
+@media (min-width: 1024px) {
+  ion-col {
+    flex: 1 0 30%; /* Tres columnas en pantallas grandes */
+  }
+}

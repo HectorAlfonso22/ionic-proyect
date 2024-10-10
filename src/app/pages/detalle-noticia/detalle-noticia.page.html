@@ -1,17 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header translucent="true">
   <ion-toolbar>
-    <ion-title>detalle-noticia</ion-title>
+    <ion-title>Detalles de la Noticia</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detalle-noticia</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div *ngIf="cardId">
-    <p>Mostrando detalles para la card con ID: {{ cardId }}</p>
-    <!-- Aquí puedes agregar más detalles, por ejemplo cargando datos adicionales según el ID -->
-  </div>
+<ion-content fullscreen>
+  <ion-card *ngIf="selectedCard">
+    <ion-card-header>
+      <ion-card-title>{{ selectedCard.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="selectedCard.imageUrl" alt="imagen">
+      <p>{{ selectedCard.description }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

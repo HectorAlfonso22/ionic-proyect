@@ -18,17 +18,18 @@
     </ion-toolbar>
   </ion-header>
     <h1>La IA</h1>
-    <ion-content class="contenido" (click)="goToDetails(cardData)">
-      @for (item of cardData; track item){
+    <ion-content class="contenido">
+      <ion-card *ngFor="let item of cardData; trackBy: trackById">
         <ion-card-header>
           <ion-card-title>{{ item.title }}</ion-card-title>
         </ion-card-header>
+  
         <ion-card-content>
-          <img src="{{ item.imageUrl }}" alt="">
-          <ion-card-title>{{ item.description }}</ion-card-title>
-          <input type="button" value="mas detalles" href>
+          <img [src]="item.imageUrl" alt="imagen">
+          <p>{{ item.description }}</p>
+          <ion-button [routerLink]="['/tabs/detalle-noticia', item.id]">Más detalles</ion-button>
         </ion-card-content>
-      }
+      </ion-card>
     </ion-content>
 
   
